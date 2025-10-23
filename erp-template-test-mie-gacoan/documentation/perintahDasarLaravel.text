@@ -1,0 +1,5 @@
+1. php artisan make:controller UserManagement/UserController --resource
+2. laravel blade lama composer require alban/laravel-collective-spatie-html-parser
+php artisan storage:link
+
+ php artisan sync:sequence --table=public.menus

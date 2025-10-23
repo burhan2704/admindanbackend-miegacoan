@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Models\Inventory\Master;
+
+use App\Models\UserManagement\UserModel;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class RackModel extends Model
+{
+    use HasFactory;
+
+    protected $table = 'im_racks';
+    protected $guarded = [];
+
+      public function createdBy()
+    {
+        return $this->hasOne(UserModel::class, 'id', 'created_by')->withDefault();
+    }
+
+    public function updatedBy()
+    {
+        return $this->hasOne(UserModel::class, 'id', 'updated_by')->withDefault();
+    }
+
+    public function deletedBy()
+    {
+        return $this->hasOne(UserModel::class, 'id', 'deleted_by')->withDefault();
+    }
+    
+
+}
